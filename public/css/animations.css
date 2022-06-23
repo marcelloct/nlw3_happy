@@ -13,10 +13,13 @@
 }
 
 .animate-up {
+    /* Effect applied in homepage, mobile & desktop version */
     animation-name: up;
     animation-duration: 300ms;
     animation-fill-mode: backwards; 
 }
+
+
 
 @keyframes right {
     from {
@@ -27,7 +30,28 @@
     }
 }
 
-.animate-right {
-    animation-name: right;
+
+@keyframes down {
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+.animate-down {
+    /* Effect applied in orphanage page, mobile version */
+    animation-name: down;
     animation-duration: 300ms;
+}
+
+
+@media (min-width: 760px) {
+    .animate-right {
+        /* Effect applied in orphanage page, desktop version */
+        animation-name: right;
+        animation-duration: 300ms;
+    }
 }
