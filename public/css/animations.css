@@ -47,6 +47,21 @@
     animation-duration: 300ms;
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-appear {
+    animation-name: appear;
+    animation-duration: 300ms;
+    animation-fill-mode: backwards;
+}
+
 
 @media (min-width: 760px) {
     .animate-right {
@@ -55,3 +70,4 @@
         animation-duration: 300ms;
     }
 }
+

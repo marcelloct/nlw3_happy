@@ -29,7 +29,10 @@ aside footer p {
 }
 
   #mapid {
-        width: 50%;
+        width: 100%;
+        height: 100%;
+
+        animation-delay: 200ms;
     }
 
 /* button */
@@ -37,6 +40,8 @@ aside footer p {
     position: absolute;
     right:4rem;
     bottom: 4rem;
+
+    z-index: 10;
 
     height: 6.4rem;
     width: 6.4rem;
@@ -55,11 +60,50 @@ aside footer p {
     background: #17d6eb;
  }
 
- /* desktop version */
-
- @media (min-width: 760px) {
-    
+ /* map */
+.leaflet-container {
+    z-index: 5;
  }
+
+ #mapid .leaflet-popup-content-wrapper {
+    background: rgba(255,255,255,0.8);
+    
+    border-radius: 20px;
+ }
+
+ #mapid .leaflet-popup-content {
+    color: #0089A5;
+    font: 600 2rem/1 'Nunito', sans-serif;
+    margin: .8rem 1.2rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ #mapid .leaflet-popup-content a {
+    width: 4rem;
+    height: 4rem;
+    background: #15C3D6;
+    box-shadow: 17.2868px 27.65px 41.48px rgba(23, 142, 166, 0.16);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color .2s;
+ }
+
+ #mapid .leaflet-popup-content a:hover {
+    background: #17D6EB;
+ }
+
+ #mapid .leaflet-popup-tip {
+    display: none;
+ }
+
+ /* desktop version */
 
  @media (max-width: 760px) {
     #page-orphanages {
@@ -68,6 +112,7 @@ aside footer p {
     
     aside {
         width: 100vw;
+        height: 45vh;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -95,5 +140,11 @@ aside footer p {
     
     #mapid {
         width: 100%;
+        height: 55vh;
+    }
+
+    #mapid .map-popup {
+        bottom: -86px;
+        left: -298px;
     }
  }
