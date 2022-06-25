@@ -10,7 +10,8 @@
 
 body {
     height: 100vh;
-    color: white
+    color: white;
+    background: #EBF2F5;
 }
 
 body, input, button, textarea {
