@@ -1,0 +1,48 @@
+#page-create-orphanage {
+    display: flex;
+    min-height: 100vh;
+}
+
+.with-sidebar {
+    padding-left: 11rem;
+}
+
+
+main {
+    flex: 1;
+}
+
+.map-container {
+    margin: 0 0 4rem;
+}
+
+.map-container .leaflet-container {
+    border-radius: 2rem 2rem 0 0;
+}
+
+.map-container footer {
+    background: #f5f8fa;
+    border-radius: 0 0 2rem 2rem;
+}
+
+/* mobile version */
+
+@media (max-width:860px) {
+    .with-sidebar {
+        padding-left: initial;
+    }
+    
+    
+form {
+    width: 100vw;
+    margin: 0 auto;
+    background: white;
+    border: initial;
+    border-radius: initial;
+
+    overflow: hidden;
+
+    padding: 8rem 4rem;
+}
+}
+

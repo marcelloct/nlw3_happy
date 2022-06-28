@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar um Orfanato | Happy</title>
+    <link rel="icon" href="./public/images/logo-icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/css/main.css" />
+    <link rel="stylesheet" href="./public/css/sidebar.css">
+    <link rel="stylesheet" href="./public/css/map.css">
+    <link rel="stylesheet" href="./public/css/form.css">
+    <link rel="stylesheet" href="./public/css/buttons.css">
+    <link rel="stylesheet" href="./public/css/animations.css" />
+    <link rel="stylesheet" href="./public/css/page-create-orphanage.css" />
+    
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""
+  />
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script
+    src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""
+  ></script>
+    
+  </head>
+  <body>
+    <div id="page-create-orphanage">
+      <aside class="animate-right sidebar">
+        <img src="./public/images/map-marker.svg" alt="Happy">
+
+        <footer>
+          <button onclick="history.back()">
+            <img src="./public/images/arrow-back.svg" alt="Voltar">
+          </button>
+        </footer>
+      </aside>
+      <main class="animate-appear with-sidebar">
+
+        <form action="">
+          <fieldset>
+            <legend>Dados</legend>
+          </fieldset>
+
+          <div class="map-container">
+            <div id="mapid"></div>
+            <input type="hidden" name="lat">
+            <input type="hidden" name="lng">
+            <footer>
+              <a href="" id="select-point">Clique no mapa para selecionar a localização</a>
+            </footer>
+          </div>
+
+          <div class="input-block">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="input-block">
+            <label for="about">Sobre <span>Máximo de 300 caracteres</span></label>
+            <textarea id="about" name="about" required></textarea>
+          </div>
+
+          <div class="input-block">
+            <label for="whattsapp">Número de Whattsapp</label>
+            <input type="text" id="whattsapp" name="whattsapp" required>
+          </div>
+
+          <div class="input-block images">
+            <label for="images">Foto</label>
+            <div class="images-upload" id="images">
+              <div class="new-upload">
+                <input name="images" placeholder="Cole o link da foto aqui" required>
+                <span onclick="deleteField(event)"><img src="./public/images/remove-file.svg" alt="Remover foto"></span>
+              </div> 
+            </div>
+            <button type="button" onclick="addPhotoField()">
+              <img src="./public/images/add-file.svg" alt="Adicionar foto">
+            </button>
+          </div>
+
+
+
+          <fieldset>
+            <legend>Visitação</legend>
+          </fieldset>
+
+          <div class="input-block">
+            <label for="instructions">Instruções</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+          </div>
+
+          <div class="input-block">
+            <label for="opening_hours">Horários das visitas</label>
+            <input id="opening_hours" name="opening_hours" required>
+          </div>
+
+          <div class="input-block">
+            <label for="open_on_weekends">Atende fim de semana</label>
+            <input type="hidden" id="open_on_weekends" name="open_on_weekends" value="1" required>
+            <div class="button-select">
+              <button data-value="1" onclick="toggleSelect(event)" type="button" class="active">Sim</button>
+              <button data-value="0" onclick="toggleSelect(event)" type="button">Não</button>
+            </div>
+          </div>
+
+          <button type="submit" class="primary-button">Confirmar</button>
+        </form>
+        
+      </main>
+      <script src="./public/scripts/page-create-orphanage.js"></script>
+  </body>
+</html>
