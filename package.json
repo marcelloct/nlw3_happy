@@ -1,0 +1,25 @@
+{
+  "name": "nlw3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelloct/nlw3_happy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelloct/nlw3_happy/issues"
+  },
+  "homepage": "https://github.com/marcelloct/nlw3_happy#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "nodemon": "^2.0.18"
+  }
+}
