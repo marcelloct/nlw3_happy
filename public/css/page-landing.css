@@ -1,5 +1,4 @@
 #page-landing {
-    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100% ) no-repeat;
     min-height: 100vh;
     text-align: center;
     display: flex;
@@ -9,6 +8,11 @@
 #container {
     margin: auto;
     width: min(90%, 112rem); /* 1120px */
+}
+
+.animate-gradient {
+    background: linear-gradient(329deg, #63d7ee, #51d1e6, #56c7f2, #23bdf5);
+    background-size: 400% 400%;
 }
 
 #logo {

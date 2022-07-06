@@ -43,13 +43,11 @@ aside.sidebar footer button:hover {
         background: initial;
     }
 
-    #page-orphanage aside > img,
-    #page-create-orphanage aside > img {
+     aside > a > img{
         display: none;
     }
 
     aside.sidebar footer button {
-
         margin: 1.6rem 0 0 1.6rem;
     }
 }
