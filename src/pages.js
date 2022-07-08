@@ -81,5 +81,29 @@ module.exports = {
             return res.send('Erro no banco de dados')
         }
         
+    },
+
+    async updateOrphanage(req, res){
+        const id = req.query.id
+        try {
+            const db = await Database
+            const results = await db.all(`SELECT * FROM orphanages WHERE id = "${id}"`)
+            const updateOrphanage = results[0]
+
+            updateOrphanage.images = updateOrphanage.images.split(",")
+            updateOrphanage.firstImage = updateOrphanage.images[0]
+
+            if(updateOrphanage.open_on_weekends == "0") {
+                updateOrphanage.open_on_weekends = false
+            } else {
+                updateOrphanage.open_on_weekends = true
+            }
+            // console.log(orphanage[0])
+            
+            return res.render('update-orphanage', {updateOrphanage})
+        } catch (error) {
+            console.log(error)
+            return res.send('Erro no banco de dados')
+        }
     }
 }

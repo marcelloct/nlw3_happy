@@ -12,6 +12,18 @@ main {
     flex: 1;
 }
 
+.alert-message {
+    background: red;
+    color: white;
+    border-radius: 2rem;
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    padding: 2rem;
+    text-align: center;
+    display: none;
+}
+
 .map-container {
     margin: 0 0 4rem;
 }

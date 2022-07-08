@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adicionar um Orfanato | Happy</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar um Orfanato | Happy</title>
+
     <link rel="icon" href="/images/logo-icon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
@@ -31,10 +32,8 @@
     integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
     crossorigin=""
   ></script>
-    
-  </head>
-  <body>
-    <span class="alert-message"></span>
+</head>
+<body>
     <div id="page-create-orphanage">
       <aside class="animate-right sidebar">
         <a href="/"><img src="/images/map-marker.svg" alt="Happy"></a>
@@ -47,42 +46,51 @@
       </aside>
       <main class="animate-appear with-sidebar">
 
-        <form action="save-orphanage" method="POST" onsubmit="validate(event)">
+        <form action="save-orphanage" method="POST" onsubmit="">
           <fieldset>
-            <legend>Dados</legend>
+            <legend>Alterar Dados</legend>
           </fieldset>
-
+  
           <div class="map-container">
             <div id="mapid"></div>
+                         <span 
+              data-lat="{{updateOrphanage.lat}}"
+              data-lng="{{updateOrphanage.lng}}">
+              </span>
             <input type="hidden" name="lat">
             <input type="hidden" name="lng">
+
             <footer>
-              <a href="" id="select-point">Clique no mapa para selecionar a localização</a>
+              <a href="" id="select-point">Clique no mapa para alterar a localização</a>
             </footer>
           </div>
 
           <div class="input-block">
             <label for="name">Nome</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" value="{{updateOrphanage.name}}" required>
           </div>
 
           <div class="input-block">
             <label for="about">Sobre <span>Máximo de 300 caracteres</span></label>
-            <textarea id="about" name="about" required></textarea>
+            <textarea id="about" name="about" value="{{updateOrphanage.about}}" required></textarea>
           </div>
 
           <div class="input-block">
             <label for="whatsapp">Número de Whattsapp</label>
-            <input type="text" id="whatsapp" name="whatsapp" required>
+            <input type="text" id="whatsapp" name="whatsapp" value="{{updateOrphanage.whatsapp}}" required>
           </div>
 
           <div class="input-block images">
             <label for="images">Foto</label>
             <div class="images-upload" id="images">
+              {{#each updateOrphanage.images}}
               <div class="new-upload">
-                <input name="images" placeholder="Cole o link da foto aqui" type="url" required>
+                
+                <input name="images" placeholder="Cole o link da foto aqui" type="url" value="{{this}}" required>
+                 
                 <span onclick="deleteField(event)"><img src="/images/remove-file.svg" alt="Remover foto"></span>
               </div> 
+             {{/each}}
             </div>
             <button type="button" onclick="addPhotoField()">
               <img src="/images/add-file.svg" alt="Adicionar foto">
@@ -92,17 +100,17 @@
 
 
           <fieldset>
-            <legend>Visitação</legend>
+            <legend>Alterar informações de visitação</legend>
           </fieldset>
 
           <div class="input-block">
             <label for="instructions">Instruções</label>
-            <textarea id="instructions" name="instructions" required></textarea>
+            <textarea id="instructions" name="instructions" value="{{updateOrphanage.instructions}}" required></textarea>
           </div>
 
           <div class="input-block">
             <label for="opening_hours">Horários das visitas</label>
-            <input id="opening_hours" name="opening_hours" required>
+            <input id="opening_hours" name="opening_hours" value="{{updateOrphanage.opening_hours}}" required>
           </div>
 
           <div class="input-block">
@@ -114,10 +122,10 @@
             </div>
           </div>
 
-          <button type="submit" class="primary-button">Confirmar</button>
+          <button type="submit" class="primary-button">Alterar</button>
         </form>
         
       </main>
-      <script src="/scripts/page-create-orphanage.js"></script>
-  </body>
+      <script src="/scripts/page-update-orphanage.js"></script>
+</body>
 </html>

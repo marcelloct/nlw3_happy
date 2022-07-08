@@ -19,6 +19,7 @@ server
   .get("/orphanages", pages.orphanages)
   .get("/create-orphanage", pages.createOrphanage)
   .post("/save-orphanage", pages.saveOrphanage)
+  .get("/update-orphanage", pages.updateOrphanage)
 
 // ligar o servidor
 server.listen(5500);

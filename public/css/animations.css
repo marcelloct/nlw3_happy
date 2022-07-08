@@ -72,6 +72,20 @@
     animation: gradient 14s ease infinite;
 }
 
+@keyframes alert {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
+
+.alert-message {
+    animation: alert 300ms ease-in-out;
+}
+
 
 @media (min-width: 760px) {
     .animate-right {
